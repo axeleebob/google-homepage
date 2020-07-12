@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alex O'Bee's Google Copy</title>
+
+    <link href="styles/reset.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+
+<style>
+    html, body{
+        height: 100%;
+        font-family: Arial;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
+
+    header {
+        grid-area: header;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .left-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .right-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .content {
+        grid-area: content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        grid-area: footer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .top-footer {
+        background-color: #f2f2f2;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top: 1px;
+        border-top-style: solid;
+        border-color: #e4e4e4;
+    }
+
+    .bottom-footer {
+        background-color: #f2f2f2;
+        height: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px;
+        border-top-style: solid;
+        border-color: #e4e4e4;
+    } 
+
+    .bottom-left-footer {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .bottom-right-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    body {
+        display: grid;
+        grid-template-rows: 60px auto 80px;
+        grid-template-areas:
+            "header"
+            "content"
+            "footer"
+    }
+
+    .logo {
+        margin: 138px 0 20px 0;
+    }
+
+    .search-icon {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .audio-icon {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .search-bar {
+        width: 500px;
+        height: 40px;
+        border-radius: 25px;
+        border: 1px;
+        border-style: solid;
+        border-color: lightgray;
+        margin: 10px;
+        display: grid;
+        grid-template-columns: 35px auto 35px;
+    }
+
+    .search-bar:hover {
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.2);
+    }
+
+    input[type="text"] {
+        border: none;
+        background-color: transparent;
+        margin: 2px 0 2px 0;
+        font-size: 14px;
+    }
+
+    input:focus{
+        border: none;
+        outline: none;
+    }
+
+    footer p {
+        color: rgb(120, 120, 130);
+        font-size: 15px;
+        padding: 0 0 0 27px;
+    }
+
+    footer a {
+        color: rgb(95, 99, 104);
+        text-decoration: none;
+    }
+
+    .bottom-left-footer a {
+        padding: 0 0 0 27px;
+    }
+
+    .bottom-right-footer a {
+        padding: 0 27px 0 0;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    header a {
+        text-decoration: none;
+        color: black;
+        opacity: 0.75;
+        font-size: 13px;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    .left-header a {
+        padding: 0 0 0 22px;
+    }
+
+    .right-header a{
+        padding: 0 22px 0 0;
+    }
+
+    .user-profile {
+        background-color: #609;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin: 0 22px 0 0;
+    }
+
+    .user-profile-name{
+        color: white;
+        font-size: 18px;        
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .buttons input[type="submit"]{
+        border: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        border-color: #f2f2f2;
+        color: #5F6368;
+        background-color: rgb(242, 242, 242);
+        font-size: 14px;
+        padding: 0 16px;
+        margin: 11px 4px;
+        height: 36px;
+    }
+
+    .buttons input[type="submit"]:hover{
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        border: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        border-color: #c6c6c6;
+        color: #222;
+    }
+
+    .buttons input[type="submit"]:focus{
+        border: 1px;
+        border-radius: 4px;
+        border-style: solid;
+        border-color: #4d90fe;
+    }
+</style>
+
+<body>
+    <header>   
+        <nav class="left-header">
+            <a href="">About</a>
+            <a href="">Store</a>
+        </nav>
+        <nav class="right-header">
+            <a href="">Gmail</a>
+            <a href="">Images</a>
+            <div class="user-profile">
+                <span class=user-profile-name>A</span>
+            </div>
+        </nav>
+    </header>
+    <main class="content">
+        <img class="logo" src="images/googlelogo_color_272x92dp.png" alt="Google Logo">
+        <form>
+            <section class="search-bar">
+                <label for="search"><img class="search-icon" style="height:20px" src="images/search.png" alt=""></label>
+                <input title="Search" name="search" id="search" type="text" required>
+                <img class="audio-icon" style="height:20px" src="images/audio.png" alt="Audio Search">
+            </section>
+            <div class="buttons">
+                <input value="Google Search" type="submit" formnovalidate accesskey="s">
+                <input value="I'm Feeling Lucky" type="submit" formnovalidate>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="top-footer">
+            <p>United Kingdom</p>
+        </div>
+        <div class="bottom-footer">
+            <div class="bottom-left-footer">
+                <a href="">Advertising</a>
+                <a href="">Business</a>
+                <a href="">How Search works</a>
+            </div>
+            <div class="bottom-right-footer">
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Settings</a>
+            </div>        
+        </div>
+    </footer>
+</body>
