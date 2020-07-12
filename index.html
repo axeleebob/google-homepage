@@ -29,13 +29,13 @@
         justify-content: space-between;
     }
 
-    .left-header {
+    .information {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
 
-    .right-header {
+    .services {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -103,6 +103,18 @@
         margin: 138px 0 20px 0;
     }
 
+    .search-form {
+        align-self: stretch;
+        margin: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-search {
+        display: none;
+    }
+
     .search-bar {
         width: 500px;
         height: 40px;
@@ -110,7 +122,7 @@
         border: 1px;
         border-style: solid;
         border-color: lightgray;
-        margin: 10px;
+        margin: 10px 0 10px 0;
         display: grid;
         grid-template-columns: 35px auto 35px;
         grid-template-areas: "label search audio";
@@ -122,7 +134,7 @@
 
     .search-icon {
         padding: 10px 10px 10px 10px;
-        grid-area: label;
+        grid-area: search;
     }
 
     .audio-icon {
@@ -141,6 +153,45 @@
     input:focus{
         border: none;
         outline: none;
+    }
+
+    @media (max-width: 600px) {
+        .search-bar {
+            width: 100%;
+            grid-template-columns: 15px auto 40px;
+            grid-template-areas: ". search label";
+        }
+        
+        .audio-icon {
+            display: none;
+        }
+
+        .search-icon {
+            display: none;
+        }
+
+        .mobile-search {
+            padding: 10px 10px 10px 10px;
+            display: inline-block;
+            width: 20px;
+            grid-area: label;
+            background-color: #3b78e7;
+            border: 1px;
+            border-style: solid;
+            border-color: #3367d6;
+            border-radius: 0 20px 20px 0;
+            margin: -1px;
+        }
+
+        .mobile-search:focus {
+            border: 1px;
+            border-style: solid;
+            border-color: #3367d6;
+        }
+
+        .search-bar:hover {
+            box-shadow: none;
+        }
     }
 
     footer p {
@@ -177,11 +228,11 @@
         text-decoration: underline;
     }
 
-    .left-header a {
+    .information a {
         padding: 0 0 0 22px;
     }
 
-    .right-header a{
+    .services a{
         padding: 0 22px 0 0;
     }
 
@@ -204,7 +255,6 @@
     .buttons {
         display: flex;
         flex-direction: row;
-        justify-content: center;
     }
 
     .buttons input[type="submit"]{
@@ -235,15 +285,21 @@
         border-style: solid;
         border-color: #4d90fe;
     }
+
+    @media (max-width: 600px) {
+        .buttons {
+            display: none;
+        }
+    }
 </style>
 
 <body>
     <header>   
-        <nav class="left-header">
+        <nav class="information">
             <a href="">About</a>
             <a href="">Store</a>
         </nav>
-        <nav class="right-header">
+        <nav class="services">
             <a href="">Gmail</a>
             <a href="">Images</a>
             <div class="user-profile">
@@ -253,11 +309,12 @@
     </header>
     <main class="content">
         <img class="logo" src="images/googlelogo_color_272x92dp.png" alt="Google Logo">
-        <form>
+        <form class="search-form">
             <section class="search-bar">
                 <label for="search"><img class="search-icon" style="height:20px" src="images/search.png" alt=""></label>
                 <input title="Search" name="search" id="search" type="text" required>
                 <img class="audio-icon" style="height:20px" src="images/audio.png" alt="Audio Search">
+                <input class="mobile-search" type="image" src="images/search-white.png" formnovalidate accesskey="s">
             </section>
             <div class="buttons">
                 <input value="Google Search" type="submit" formnovalidate accesskey="s">
