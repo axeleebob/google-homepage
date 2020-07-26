@@ -90,7 +90,8 @@
         justify-content: end;
     }
 
-    body {
+    .main {
+        height: 100%;
         display: grid;
         grid-template-rows: 60px auto 80px;
         grid-template-areas:
@@ -294,49 +295,51 @@
 </style>
 
 <body>
-    <header>   
-        <nav class="information">
-            <a href="">About</a>
-            <a href="">Store</a>
-        </nav>
-        <nav class="services">
-            <a href="">Gmail</a>
-            <a href="">Images</a>
-            <div class="user-profile">
-                <span class=user-profile-name>A</span>
+    <div class="main">
+        <header>   
+            <nav class="information">
+                <a href="">About</a>
+                <a href="">Store</a>
+            </nav>
+            <nav class="services">
+                <a href="">Gmail</a>
+                <a href="">Images</a>
+                <div class="user-profile">
+                    <span class=user-profile-name>A</span>
+                </div>
+            </nav>
+        </header>
+        <main class="content">
+            <img class="logo" src="images/googlelogo_color_272x92dp.png" alt="Google Logo">
+            <form class="search-form">
+                <section class="search-bar">
+                    <label for="search"><img class="search-icon" style="height:20px" src="images/search.png" alt=""></label>
+                    <input title="Search" name="search" id="search" type="text" required>
+                    <img class="audio-icon" style="height:20px" src="images/audio.png" alt="Audio Search">
+                    <input class="mobile-search" type="image" src="images/search-white.png" formnovalidate accesskey="s">
+                </section>
+                <div class="buttons">
+                    <input value="Google Search" type="submit" formnovalidate accesskey="s">
+                    <input value="I'm Feeling Lucky" type="submit" formnovalidate>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <div class="top-footer">
+                <p>United Kingdom</p>
             </div>
-        </nav>
-    </header>
-    <main class="content">
-        <img class="logo" src="images/googlelogo_color_272x92dp.png" alt="Google Logo">
-        <form class="search-form">
-            <section class="search-bar">
-                <label for="search"><img class="search-icon" style="height:20px" src="images/search.png" alt=""></label>
-                <input title="Search" name="search" id="search" type="text" required>
-                <img class="audio-icon" style="height:20px" src="images/audio.png" alt="Audio Search">
-                <input class="mobile-search" type="image" src="images/search-white.png" formnovalidate accesskey="s">
-            </section>
-            <div class="buttons">
-                <input value="Google Search" type="submit" formnovalidate accesskey="s">
-                <input value="I'm Feeling Lucky" type="submit" formnovalidate>
+            <div class="bottom-footer">
+                <div class="bottom-left-footer">
+                    <a href="">Advertising</a>
+                    <a href="">Business</a>
+                    <a href="">How Search works</a>
+                </div>
+                <div class="bottom-right-footer">
+                    <a href="">Privacy</a>
+                    <a href="">Terms</a>
+                    <a href="">Settings</a>
+                </div>        
             </div>
-        </form>
-    </main>
-    <footer>
-        <div class="top-footer">
-            <p>United Kingdom</p>
-        </div>
-        <div class="bottom-footer">
-            <div class="bottom-left-footer">
-                <a href="">Advertising</a>
-                <a href="">Business</a>
-                <a href="">How Search works</a>
-            </div>
-            <div class="bottom-right-footer">
-                <a href="">Privacy</a>
-                <a href="">Terms</a>
-                <a href="">Settings</a>
-            </div>        
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
